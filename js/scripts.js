@@ -7,9 +7,11 @@ function handleForm(event) {
 
   // create results heading
   const displayHeading = document.createElement("h2");
-  displayHeading.append("Here is your new sentence:");
+  displayHeading.append("Here a sentence you've created:");
   document.querySelector("form#sentence").reset();
   document.body.append(displayHeading);
+  
+  
   filterSentence = [];
 
 
@@ -17,13 +19,11 @@ function handleForm(event) {
     
     if (element.length >= 3) {
       filterSentence.push(element);
-      console.log(filterSentence); 
     }
   });  
     let revArray = filterSentence.reverse();
     console.log(revArray);
     let newSentence = revArray.join(" ");
-    console.log(newSentence);
     const paragraph = document.createElement("p");
     paragraph.append(newSentence);
     document.body.append(paragraph);
